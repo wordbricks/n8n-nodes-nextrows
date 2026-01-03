@@ -1,20 +1,42 @@
-import { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type {
+	IAuthenticateGeneric,
+	ICredentialTestRequest,
+	ICredentialType,
+	INodeProperties,
+} from 'n8n-workflow';
 
 export class NextrowsApi implements ICredentialType {
 	name = 'nextrowsApi';
-	displayName = 'NextRows API';
-	documentationUrl = 'https://nextrows.com/docs/api/apps/runAppJson';
+
+	displayName = 'Nextrows API';
+
+	// Link to your community node's README
+	documentationUrl = 'https://github.com/org/-nextrows?tab=readme-ov-file#credentials';
+
 	properties: INodeProperties[] = [
 		{
 			displayName: 'API Key',
 			name: 'apiKey',
 			type: 'string',
-			typeOptions: {
-				password: true,
-			},
-			default: '',
+			typeOptions: { password: true },
 			required: true,
-			description: 'API key from NextRows dashboard (https://nextrows.com/dashboard/overview)',
+			default: '',
 		},
 	];
+
+	authenticate: IAuthenticateGeneric = {
+		type: 'generic',
+		properties: {
+			headers: {
+				'x-api-key': '={{$credentials.apiKey}}',
+			},
+		},
+	};
+
+	test: ICredentialTestRequest = {
+		request: {
+			baseURL: 'https://api.nextrows.com',
+			url: '/v1/user',
+		},
+	};
 }
