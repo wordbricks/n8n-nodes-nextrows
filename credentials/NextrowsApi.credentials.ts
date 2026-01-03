@@ -1,5 +1,6 @@
 import type {
 	IAuthenticateGeneric,
+	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
 	Icon,
@@ -32,6 +33,14 @@ export class NextrowsApi implements ICredentialType {
 			headers: {
 				Authorization: '=Bearer {{$credentials.apiKey}}',
 			},
+		},
+	};
+
+	test: ICredentialTestRequest = {
+		request: {
+			baseURL: 'https://api.nextrows.com',
+			url: '/v1/credits',
+			method: 'GET',
 		},
 	};
 }

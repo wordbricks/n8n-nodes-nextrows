@@ -5,9 +5,6 @@ import type {
 	INodeTypeDescription,
 	IHttpRequestMethods,
 	IDataObject,
-	ICredentialTestFunctions,
-	ICredentialsDecrypted,
-	INodeCredentialTestResult,
 } from 'n8n-workflow';
 import { NodeOperationError } from 'n8n-workflow';
 
@@ -30,7 +27,6 @@ export class Nextrows implements INodeType {
 			{
 				name: 'nextrowsApi',
 				required: true,
-				testedBy: 'nextrowsApiTest',
 			},
 		],
 		properties: [
@@ -81,31 +77,6 @@ export class Nextrows implements INodeType {
 				],
 			},
 		],
-	};
-
-	methods = {
-		credentialTest: {
-			async nextrowsApiTest(
-				this: ICredentialTestFunctions,
-				credential: ICredentialsDecrypted,
-			): Promise<INodeCredentialTestResult> {
-				const apiKey = credential.data?.apiKey as string;
-
-				if (!apiKey || apiKey.trim() === '') {
-					return {
-						status: 'Error',
-						message: 'API Key is required',
-					};
-				}
-
-				// Since there's no test endpoint, we just validate that the API key is provided
-				// The actual validation will happen when the node runs
-				return {
-					status: 'OK',
-					message: 'API Key is set. Credentials will be validated when the node runs.',
-				};
-			},
-		},
 	};
 
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
