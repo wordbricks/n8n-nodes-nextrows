@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-nextrows",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "n8n node to run NextRows web crawling apps and retrieve structured data",
   "license": "MIT",
   "homepage": "https://nextrows.com",
