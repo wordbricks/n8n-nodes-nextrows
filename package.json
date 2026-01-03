@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-nextrows",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "n8n node to run NextRows web crawling apps and retrieve structured data",
   "license": "MIT",
   "homepage": "https://nextrows.com",
@@ -28,12 +28,18 @@
     "release": "n8n-node release",
     "prepublishOnly": "n8n-node prerelease"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "n8n": {
     "n8nNodesApiVersion": 1,
     "strict": true,
-    "credentials": ["dist/credentials/NextrowsApi.credentials.js"],
-    "nodes": ["dist/nodes/Nextrows/Nextrows.node.js"]
+    "credentials": [
+      "dist/credentials/NextrowsApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Nextrows/Nextrows.node.js"
+    ]
   },
   "devDependencies": {
     "@n8n/node-cli": "*",
