@@ -1,18 +1,22 @@
 {
-	"node": "n8n-nodes-nextrows",
+	"node": "n8n-nodes-nextrows.nextrows",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
-	"categories": ["Development", "Developer Tools"],
+	"categories": ["Data & Storage", "Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://github.com/org/repo?tab=readme-ov-file#credentials"
+				"url": "https://github.com/wordbricks/n8n-nodes-nextrows#credentials"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://github.com/org/repo?tab=readme-ov-file"
+				"url": "https://github.com/wordbricks/n8n-nodes-nextrows"
 			}
 		]
+	},
+	"alias": ["web scraping", "crawler", "scraper", "extract", "data extraction"],
+	"subcategories": {
+		"Data & Storage": ["Other Data Sources"]
 	}
 }

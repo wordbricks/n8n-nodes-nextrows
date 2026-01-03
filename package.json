@@ -1,14 +1,23 @@
 {
   "name": "n8n-nodes-nextrows",
   "version": "0.1.0",
-  "description": "",
+  "description": "n8n node to run NextRows web crawling apps and retrieve structured data",
   "license": "MIT",
-  "homepage": "",
-  "keywords": ["n8n-community-node-package"],
-  "author": { "name": "siisee11", "email": "siisee111@gmail.com" },
+  "homepage": "https://nextrows.com",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "nextrows",
+    "web-scraping",
+    "web-crawling"
+  ],
+  "author": {
+    "name": "wordbricks",
+    "email": "dev@wordbricks.ai"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "git+https://github.com/wordbricks/n8n-nodes-nextrows.git"
   },
   "scripts": {
     "build": "n8n-node build",
@@ -33,5 +42,7 @@
     "release-it": "^19.0.4",
     "typescript": "5.9.2"
   },
-  "peerDependencies": { "n8n-workflow": "*" }
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
 }
